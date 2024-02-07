@@ -1,0 +1,69 @@
+.personaCard{
+    display: flex;
+    flex-direction: column;
+    padding:35px;
+    justify-content: center;
+    align-items: center;
+}
+
+.personaType{
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.personaName {
+    margin-top: 15px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.personaAttr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.personaAttr div{
+    font-size: small;
+    margin-top: 12px;  
+}
+
+
+
+
+.headCard{
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    margin-right: 5px;
+}
+
+.headGraphic{
+    font-size: 13px;
+}
+
+.headType{
+    margin-top: 20px;
+    font-size: 12px;
+    text-align: end;
+}
+
+.headName {
+    margin-top: 15px;
+    font-size: 13px;
+    text-align: end;
+}
+
+.headAttr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+.headAttr div{
+    font-size: small;
+    margin-top: 12px;  
+}
