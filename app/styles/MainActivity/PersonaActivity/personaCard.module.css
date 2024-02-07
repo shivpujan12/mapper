@@ -25,6 +25,7 @@
     align-items: center;
 }
 
+
 .personaAttr div{
     font-size: small;
     margin-top: 12px;  
@@ -36,7 +37,7 @@
 .headCard{
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
+    margin-top: 70px;
     margin-right: 5px;
 }
 
@@ -66,4 +67,18 @@
 .headAttr div{
     font-size: small;
     margin-top: 12px;  
+}
+
+.arrbtn{
+    text-align: end;
+    cursor: pointer;
+    margin:10px;
+}
+
+.arrbtn img{
+    filter: grayscale(1);
+}
+
+.addBtn {
+    font-size: 15px;
 }

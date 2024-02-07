@@ -14,6 +14,7 @@ export default function LeftSection({
         <PersonaCard
           type="heads"
           profileImage=""
+          pointerImage=""
           open={open}
           setOpen={setOpen}
         />
