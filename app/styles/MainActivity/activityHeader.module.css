@@ -1,0 +1,15 @@
+.main {
+  min-height: 40px;
+  margin: 8px;
+  align-items: center;
+    border-bottom: 1px solid #eaecf0;
+}
+
+.brandLogo {
+    height: 100%;
+    border: 1px dashed #eaecf0;
+    padding: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
