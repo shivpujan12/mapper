@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     min-height: 24px;
-    background-color: white;
+    background-color: #fbfcfd;
     padding: 12px;
 }
 
@@ -38,7 +38,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    font-size: 15px;
+    font-size: small;
 }
 
 .presentBtn {
