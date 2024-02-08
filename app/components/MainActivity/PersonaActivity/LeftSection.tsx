@@ -15,6 +15,8 @@ export default function LeftSection({
           type="heads"
           profileImage=""
           pointerImage=""
+          personaColor=""
+          highlightColor=""
           open={open}
           setOpen={setOpen}
         />

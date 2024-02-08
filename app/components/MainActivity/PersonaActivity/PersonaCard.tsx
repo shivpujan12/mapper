@@ -9,19 +9,30 @@ export default function PersonaCard({
   type,
   profileImage,
   pointerImage,
+  personaColor,
+  highlightColor,
   open,
   setOpen,
 }: {
   type: string;
   profileImage: string;
   pointerImage: string;
+  personaColor: string;
+  highlightColor: string;
   open: any;
   setOpen: any;
 }) {
   return type == "heads" ? (
     <HeadCard open={open} setOpen={setOpen} />
   ) : (
-    <ProfileCard profileImage={profileImage} pointerImage={pointerImage} open={open} setOpen={setOpen} />
+    <ProfileCard
+      profileImage={profileImage}
+      pointerImage={pointerImage}
+      personaColor = {personaColor}
+      highlightColor = {highlightColor}
+      open={open}
+      setOpen={setOpen}
+    />
   );
 }
 
@@ -58,18 +69,31 @@ function HeadCard({ open, setOpen }: { open: any; setOpen: any }) {
 function ProfileCard({
   profileImage,
   pointerImage,
+  personaColor,
+  highlightColor,
   open,
   setOpen,
 }: {
   profileImage: string;
   pointerImage: string;
+  personaColor: string;
+  highlightColor: string;
   open: any;
   setOpen: any;
 }) {
+  const [highlight, showHighlight] = useState(false);
+
   return (
-    <div className={`${style.personaCard}`}>
-      <Image src={profileImage} width={100} height={100} alt={"profile"} />
-      <div className={`${style.personaType} text-muted`}>Designer</div>
+    <div
+      className={`${style.personaCard}`}
+      onClick={() => showHighlight(!highlight)}
+    >
+      {highlight ? (
+        <HighLightedImage profileImage={profileImage} personaColor={personaColor} highlightColor={highlightColor} />
+      ) : (
+        <NormalImage profileImage={profileImage} />
+      )}
+      <div className={`${style.personaType} text-muted`}>NewType</div>
       <div className={`${style.personaName} text-muted`}>SomeName</div>
       <div
         className={`${style.personaAttr} text-muted`}
@@ -89,13 +113,23 @@ function ProfileCard({
         />
       </div>
       <div>
-      <Image
-          src={pointerImage}
-          width={30}
-          height={30}
-          alt="down-arrow"
-        />
+        <Image src={pointerImage} width={highlight ? 40 : 30} height={highlight ? 40 : 30} alt="down-arrow" />
       </div>
     </div>
   );
+}
+
+function HighLightedImage({ profileImage,personaColor, highlightColor }: { profileImage: string, personaColor:string,highlightColor:string }) {
+  return (
+    <div className={`${style.personaImage} rounded-circle`} style={{borderColor: personaColor}}>
+      <div className={`${style.innerCircle} rounded-circle`}>
+        <div className={`${style.backgroundCircle} rounded-circle`} style={{backgroundColor: highlightColor}}></div>
+        <Image src={profileImage} width={100} height={100} alt={"profile"} />
+      </div>
+    </div>
+  );
+}
+
+function NormalImage({ profileImage }: { profileImage: string }) {
+  return <Image src={profileImage} width={100} height={100} alt={"profile"} />;
 }

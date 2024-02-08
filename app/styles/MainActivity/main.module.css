@@ -3,6 +3,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     background-color: #eaecf0;
@@ -11,5 +12,6 @@
 .activitySection{
     min-width: 60%;
     min-height: 80vh;
+    max-width: 97%;
     background-color: white;
 }

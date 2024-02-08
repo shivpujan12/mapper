@@ -1,42 +1,69 @@
 .main {
-    position:relative;
-    /* display: flex; */
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    /* width: 100%; */
-    border-left: 1px solid #eaecf0;
-    overflow: hidden;
+  position: relative;
+  /* display: flex; */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+  border-left: 1px solid #eaecf0;
+  overflow: hidden;
 }
 
-.cardContainer{
-    width: 100%;
+.cardContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.cardContainer::-webkit-scrollbar {
+  border: 5px;
+}
+
+.personaAddBtn {
+  display: flex;
+  min-height: 70px;
+  min-width: 70px;
+  transform: translate(25px);
+  position: absolute;
+  right: 0;
+  top: 30px;
+  font-size: 30px;
+  color: #3d79d6;
+  background-color: #e5f4fd;
+  text-align: center;
+  justify-content: start;
+  padding-left: 12px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toolTip {
+  position: absolute;
+  background-color: white;
+  z-index: 2;
+  min-height: 70px;
+  min-width: 70px;
+  transform: translate(-170px, 100px);
+  font-size: medium;
+  text-wrap: nowrap;
+  box-shadow: 0 4px 8px 0 rgba(85, 85, 85, 0.2), 0 6px 20px 0 rgba(135, 135, 135, 0.19);
+  padding: 24px;
+  color: black;
+  border-radius: 15px;
+}
+
+.toolTipItem {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    flex-wrap: nowrap;
-    overflow-y: hidden;
-    overflow-x: auto;
+    cursor:pointer;
 }
 
-.cardContainer::-webkit-scrollbar{
-    border: 5px;
-}
-
-.personaAddBtn{
-    display: flex;
-    min-height: 70px;
-    min-width: 70px;
-    transform: translate(25px);
-    position: absolute;
-    right: 0;
-    top: 30px;
-    font-size: 30px;
-    color: #3d79d6;
-    background-color: #e5f4fd;
-    text-align: center;
-    justify-content: start;
-    padding-left: 12px;
-    align-items: center;
+.toolTipItem span{
+    margin-left: 12px;
 }
