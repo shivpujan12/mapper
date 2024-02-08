@@ -1,14 +1,16 @@
 .main {
-    display: flex;
+    position:relative;
+    /* display: flex; */
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    /* width: 100%; */
     border-left: 1px solid #eaecf0;
+    overflow: hidden;
 }
 
 .cardContainer{
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -22,3 +24,19 @@
     border: 5px;
 }
 
+.personaAddBtn{
+    display: flex;
+    min-height: 70px;
+    min-width: 70px;
+    transform: translate(25px);
+    position: absolute;
+    right: 0;
+    top: 30px;
+    font-size: 30px;
+    color: #3d79d6;
+    background-color: #e5f4fd;
+    text-align: center;
+    justify-content: start;
+    padding-left: 12px;
+    align-items: center;
+}

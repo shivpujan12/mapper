@@ -1,0 +1,70 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 24px;
+    background-color: white;
+    padding: 12px;
+}
+
+.leftPart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 15px;
+
+}
+.attrLib{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* padding: 15px */
+    margin-left: 12px;
+    color:#5dbbf0;
+    border: 2px solid #5dbbf0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.attrLib img {
+    margin-right: 5px;
+}
+
+.rightPart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.presentBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* padding: 15px */
+    margin-left: 12px;
+    color:#5dbbf0;
+    border: 2px solid #5dbbf0;
+    padding-right: 7px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.rightPart img{
+    margin-left: 20px;
+}
+
+.shareBtn {
+    margin-left: 12px;
+    color: white;
+    background-color: #5dbbf0;
+    border: 2px solid #5dbbf0;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
