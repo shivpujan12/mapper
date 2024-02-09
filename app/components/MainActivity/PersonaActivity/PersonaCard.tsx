@@ -1,9 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Collapse from "react-bootstrap/Collapse";
 import Fade from "react-bootstrap/Fade";
 import Image from "next/image";
 import style from "@/app/styles/MainActivity/PersonaActivity/personaCard.module.css";
+import { AppContext } from "@/app/context/store";
 
 export default function PersonaCard({
   type,
@@ -13,6 +14,7 @@ export default function PersonaCard({
   highlightColor,
   open,
   setOpen,
+  id,
 }: {
   type: string;
   profileImage: string;
@@ -21,6 +23,7 @@ export default function PersonaCard({
   highlightColor: string;
   open: any;
   setOpen: any;
+  id: number
 }) {
   return type == "heads" ? (
     <HeadCard open={open} setOpen={setOpen} />
@@ -32,6 +35,7 @@ export default function PersonaCard({
       highlightColor = {highlightColor}
       open={open}
       setOpen={setOpen}
+      id = {id}
     />
   );
 }
@@ -73,6 +77,7 @@ function ProfileCard({
   highlightColor,
   open,
   setOpen,
+  id,
 }: {
   profileImage: string;
   pointerImage: string;
@@ -80,21 +85,30 @@ function ProfileCard({
   highlightColor: string;
   open: any;
   setOpen: any;
+  id: number;
 }) {
   const [highlight, showHighlight] = useState(false);
+  const {highlightId,setHighLightID} = useContext(AppContext);
 
   return (
     <div
       className={`${style.personaCard}`}
-      onClick={() => showHighlight(!highlight)}
+      onClick={() => {
+        showHighlight(!highlight)
+        // if(id!==highlightId)
+          setHighLightID(id);
+        // else setHighLightID(0);
+        console.log("currentID: " + id);
+      }}
     >
         <div className={`${style.holder} rounded-pill p-3`}>...</div>
 
-      {highlight ? (
+      { highlightId == id ?
+      highlight ? (
         <HighLightedImage profileImage={profileImage} personaColor={personaColor} highlightColor={highlightColor} />
       ) : (
         <NormalImage profileImage={profileImage} />
-      )}
+      ) : <NormalImage profileImage={profileImage} /> }
       <div className={`${style.personaType} text-muted`}>NewType</div>
       <div className={`${style.personaName} text-muted`}>SomeName</div>
       <div

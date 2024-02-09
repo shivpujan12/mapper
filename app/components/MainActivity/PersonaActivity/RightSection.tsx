@@ -12,10 +12,6 @@ export default function RightSection({
 }) {
   const [activeAddToolTip, setActiveAddToolTip] = useState(false);
 
-  function handleAddition() {
-    console.log("hello");
-  }
-
   return (
     <div className={`${style.main}`}>
       <div className={`${style.cardContainer}`}>
@@ -30,6 +26,7 @@ export default function RightSection({
               highlightColor={d.highlightColor}
               open={open}
               setOpen={setOpen}
+              id = {d.id}
             />
           );
         })}
@@ -52,6 +49,7 @@ function Tooltip() {
       pointerImage: "/pointer.svg",
       personaColor: "#3d79d6",
       highlightColor: "#3d79d666",
+      id: 1
     };
     data.push(newPersona);
   }
