@@ -88,6 +88,8 @@ function ProfileCard({
       className={`${style.personaCard}`}
       onClick={() => showHighlight(!highlight)}
     >
+        <div className={`${style.holder} rounded-pill p-3`}>...</div>
+
       {highlight ? (
         <HighLightedImage profileImage={profileImage} personaColor={personaColor} highlightColor={highlightColor} />
       ) : (

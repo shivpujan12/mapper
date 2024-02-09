@@ -1,4 +1,5 @@
 .personaCard{
+    position: relative;
     display: flex;
     flex-direction: column;
     padding:35px;
@@ -30,6 +31,18 @@
     font-size: small;
     margin-top: 12px;  
 }
+
+.holder{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    color:#0000001d;
+    transform: translate(-10px,-30px);
+    cursor: pointer;
+}
+
 
 
 
@@ -111,7 +124,8 @@
         opacity: .5;
     }
     100% {
-        transform: scale(1.5);
+        transform: scale(1.6);
         opacity: 0;
     }
 }
+
