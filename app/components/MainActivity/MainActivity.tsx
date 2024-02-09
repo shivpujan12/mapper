@@ -8,15 +8,18 @@ import { AppContext } from '@/app/context/store';
 
 
 export default function MainActivity() {
-  const [highlight,showHighLight] = useState(false);
   const [highlightId,setHighLightID] = useState(0);
+  const [cordinate,setCordinate] = useState([[0,0],[0,0]])
   return (
-    <AppContext.Provider value={{highlight,showHighLight,highlightId,setHighLightID}}>
+    <AppContext.Provider value={{highlightId,setHighLightID}}>
     <div className={`${style.main}`}>
       <div className={`${style.activitySection}`}>
         <ActivityHeader />
         <PersonaActivity />
         <SectionActivity />
+        {/* <svg className='mapper-line'>
+        <line x1="0" y1="50" x2="250" y2="50" style={{stroke:"red", strokeWidth: 12}} />
+        </svg> */}
       </div>
     </div>
     </AppContext.Provider>

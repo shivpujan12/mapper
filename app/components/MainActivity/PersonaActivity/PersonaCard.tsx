@@ -94,16 +94,27 @@ function ProfileCard({
     <div
       className={`${style.personaCard}`}
       onClick={() => {
-        showHighlight(!highlight)
-        // if(id!==highlightId)
+
+        if(highlight && highlightId != id){
+          //first switch click
+          console.log("coming here");
+          showHighlight(true);
           setHighLightID(id);
-        // else setHighLightID(0);
+        }
+
+        if(!highlight){
+          showHighlight(true);
+          setHighLightID(id);
+        } else {
+          showHighlight(false);
+          setHighLightID(0);
+        }
         console.log("currentID: " + id);
       }}
     >
         <div className={`${style.holder} rounded-pill p-3`}>...</div>
 
-      { highlightId == id ?
+      { highlightId === id ?
       highlight ? (
         <HighLightedImage profileImage={profileImage} personaColor={personaColor} highlightColor={highlightColor} />
       ) : (

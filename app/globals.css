@@ -163,6 +163,10 @@ a {
   cursor: pointer;
 }
 
+.mapper-line{
+  position: absolute;
+}
+
 
 .p1 {
   width: 10px;

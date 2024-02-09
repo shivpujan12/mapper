@@ -16,6 +16,8 @@ export default function SectionActivity() {
         </div>
       </header>
       <InnerSection />
+      <InnerSection />
+      <InnerSection />
       {/* <LeftSection />
         <RightSection /> */}
     </div>
@@ -34,7 +36,7 @@ function InnerSection() {
 }
 
 function SectionTitles() {
-  const [pointLoc, setPointLoc] = useState([2, 2, 2]);
+  const [pointLoc, setPointLoc] = useState([0, 0, 0]);
 
   return (
     <div className="section-titles bg-white">
@@ -59,7 +61,7 @@ function SubInnerSection({
   const { highlightId } = useContext(AppContext);
   return (
     <div
-      className="inner-section"
+      className="inner-section mt-2"
       onClick={() => {
         const newPointLoc = [...pointLoc] ;
         if (highlightId) {
