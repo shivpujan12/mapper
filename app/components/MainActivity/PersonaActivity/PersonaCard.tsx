@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useRef, useEffect } from "react";
 import Collapse from "react-bootstrap/Collapse";
 import Fade from "react-bootstrap/Fade";
 import Image from "next/image";
@@ -88,12 +88,20 @@ function ProfileCard({
   id: number;
 }) {
   const [highlight, showHighlight] = useState(false);
-  const {highlightId,setHighLightID} = useContext(AppContext);
+  const {highlightId,setHighLightID,setHeadPointer} = useContext(AppContext);
+  const headPointerRef = useRef();
+
+  useEffect(()=>{
+    setHeadPointer(headPointerRef.current);
+  })
 
   return (
     <div
       className={`${style.personaCard}`}
       onClick={() => {
+
+        setHeadPointer(headPointerRef.current);
+
 
         if(highlight && highlightId != id){
           //first switch click
@@ -105,6 +113,8 @@ function ProfileCard({
         if(!highlight){
           showHighlight(true);
           setHighLightID(id);
+          
+
         } else {
           showHighlight(false);
           setHighLightID(0);
@@ -139,7 +149,7 @@ function ProfileCard({
           alt="down-arrow"
         />
       </div>
-      <div>
+      <div ref={headPointerRef}>
         <Image src={pointerImage} width={highlight ? 40 : 30} height={highlight ? 40 : 30} alt="down-arrow" />
       </div>
     </div>

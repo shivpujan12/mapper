@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import style from "@/app/styles/MainActivity/SectionActivity/section.module.css";
 import { AppContext } from "@/app/context/store";
+import { getOffset } from "../MainActivity";
 
 export default function SectionActivity() {
   return (
@@ -58,24 +59,33 @@ function SubInnerSection({
   pointLoc: any;
   setPointLoc: any;
 }) {
-  const { highlightId } = useContext(AppContext);
+  const { highlightId, p1ref,setp1Ref,lineHandler} = useContext(AppContext);
+  const p1Ref = useRef();
+
+  useEffect(()=>{
+    setp1Ref(p1Ref.current);
+  },[])
+
   return (
     <div
-      className="inner-section mt-2"
+      className="inner-section"
       onClick={() => {
         const newPointLoc = [...pointLoc] ;
         if (highlightId) {
           newPointLoc[highlightId - 1] = id;
           setPointLoc(newPointLoc);
+          console.log("setting pointer ref ", p1Ref.current);
+          setp1Ref(p1Ref.current);
+          lineHandler(p1Ref.current);
         }
         console.log(pointLoc);
       }}
     >
       <div>+</div>
-      <div>
+      <div ref={p1Ref}>
         {pointLoc.map((d: any, i: any) => {
           if (d === id) {
-            if (i == 0) return <div key={i} className="p1 rounded-circle"></div>;
+            if (i == 0) return <div key={i} id={1} className="p1 rounded-circle"></div>;
             if (i == 1) return <div key={i} className="p2 rounded-circle"></div>;
             if (i == 2) return <div key={i} className="p3 rounded-circle"></div>;
             else return null;
